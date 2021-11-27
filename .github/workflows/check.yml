@@ -82,7 +82,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-${{ matrix.node-version }}
       - run: yarn add fs-extra
-      - run: yarn build:vscode
+      - run: yarn 'build:vscode'
       - run: yarn yalc
       - run: yarn install && yarn build
       - run: yarn serve > /dev/null 2>&1 &
