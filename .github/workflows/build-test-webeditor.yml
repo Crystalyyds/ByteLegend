@@ -46,6 +46,7 @@ jobs:
       - run: yarn add fs-extra
         working-directory: github1s
       - run: yarn install && yarn build && yarn hash
+        working-directory: github1s
       - uses: actions/upload-artifact@v2
         with:
           name: webeditor
