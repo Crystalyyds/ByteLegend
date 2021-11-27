@@ -59,11 +59,12 @@ jobs:
         with:
           submodules: recursive
           token: ${{ secrets.BYTELEGENDBOT_TOKEN }}
-      - uses: dawidd6/action-download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
-          workflow: build-test-webeditor.yml
           name: webeditor
           path: github1s/dist
+      - name: Display structure of downloaded files
+        run: ls -alth github1s/dist
       - run: yarn serve > /dev/null 2>&1 &
         working-directory: github1s
       - name: Set up JDK 11
