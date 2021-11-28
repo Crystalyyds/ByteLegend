@@ -17,7 +17,7 @@ jobs:
         with:
           script: |
             if ('${{ github.event.inputs.deployCommit }}' == 'latest') {
-              const response = github.rest.git.getRef({
+              const response = await github.rest.git.getRef({
                 owner: 'ByteLegend',
                 repo: 'ByteLegend',
                 ref: 'heads/webeditor-check'
