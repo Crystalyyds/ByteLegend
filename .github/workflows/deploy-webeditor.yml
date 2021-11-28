@@ -23,8 +23,8 @@ jobs:
                 ref: 'heads/webeditor-check'
               })
               console.log(`${JSON.stringify(response)}`)
-              console.log(`Commit to deploy: ${response.object.sha}`)
-              core.setOutput('deploy-commit', response.object.sha)
+              console.log(`Commit to deploy: ${response.data.object.sha}`)
+              core.setOutput('deploy-commit', response.data.object.sha)
             } else {
               console.log(`Commit to deploy: ${{ github.event.inputs.deployCommit }}`)
               core.setOutput('deploy-commit', '${{ github.event.inputs.deployCommit }}')
