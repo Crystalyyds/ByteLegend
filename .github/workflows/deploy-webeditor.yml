@@ -35,7 +35,7 @@ jobs:
           name: webeditor
           commit: ${{ steps.determine-webeditor-commit.outputs.deploy-commit }}
           path: github1s/dist
-      - run: ls -alth github1s/dist
+      - run: tree github1s/dist
 #      - name: Deploy to s3 Seoul
 #        run: >
 #          docker run -v $GITHUB_WORKSPACE/github1s/dist:/dist
