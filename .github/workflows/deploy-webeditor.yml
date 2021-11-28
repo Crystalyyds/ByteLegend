@@ -20,7 +20,7 @@ jobs:
               const response = github.rest.git.getRef({
                 owner: 'ByteLegend',
                 repo: 'ByteLegend',
-                ref: 'webeditor-check'
+                ref: 'heads/webeditor-check'
               })
               console.log(`Commit to deploy: ${response.object.sha}`)
               core.setOutput('deploy-commit', response.object.sha)
