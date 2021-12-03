@@ -1,0 +1,13 @@
+name: Contributor CI Build
+
+on: push
+      
+jobs:
+  build:
+    name: "test"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: git clone
+        uses: actions/checkout@v2
+      - id: test
+        run: echo "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
